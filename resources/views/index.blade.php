@@ -1,49 +1,6 @@
-@extends('elements.layout')
+@extends('layouts.app')
 
 @section('content')
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container">
-
-      <div class="logo float-left">
-        <h1 class="text-light"><a href="{{ route('index') }}"><span>reps</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-      </div>
-
-      <nav class="nav-menu float-right d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="{{ route('index') }}">ホーム</a></li>
-          <li><a href="#about">repsについて</a></li>
-          <li><a href="#portfolio">魅力的な爬虫類</a></li>
-          <li><a href="#">みんなの投稿</a></li>
-            @if (Auth::check())
-              <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#"
-                      onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                      {{ __('Logout') }}
-                  </a>
-
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                  </form>
-                </div>
-              </li>
-            @else
-              <li><a href="{{ route('login') }}">ログイン</a></li>
-              <li><a href="{{ route('register') }}">会員登録</a></li>
-            @endif
-        </ul>
-      </nav><!-- .nav-menu -->
-
-    </div>
-  </header><!-- End #header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
