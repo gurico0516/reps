@@ -17,31 +17,28 @@
           <li><a href="#about">repsについて</a></li>
           <li><a href="#portfolio">魅力的な爬虫類</a></li>
           <li><a href="#">みんなの投稿</a></li>
-          @guest
-            <li class="drop-down"><a href="">ログイン</a>
-              <ul>
-                @if (Auth::check())
-                  <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-                    <a class="dropdown-item" href="#"
-                        onclick="event.preventDefault();
-                                      document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+            @if (Auth::check())
+              <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                      @csrf
-                    </form>
-                  </li>
-                @else
-                  <li><a href="{{ route('login') }}">アカウントをお持ちの方</a></li>
-                  <li><a href="{{ route('register') }}">アカウントをお持ちでない方</a></li>
-                @endif
-              </ul>
-            </li>
-          @endguest
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#"
+                      onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                  </form>
+                </div>
+              </li>
+            @else
+              <li><a href="{{ route('login') }}">ログイン</a></li>
+              <li><a href="{{ route('register') }}">会員登録</a></li>
+            @endif
         </ul>
       </nav><!-- .nav-menu -->
 
