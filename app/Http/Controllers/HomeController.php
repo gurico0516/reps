@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('index');
+        $this->middleware('auth')->except('home');
     }
 
     /**
@@ -22,13 +22,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function home()
     {
         $auths = Auth::user();
-        return view('index', ['auths', $auths]);
-    }
-     public function top()
-    {
-        return view('home');
+        return view('home', ['auths', $auths]);
     }
 }

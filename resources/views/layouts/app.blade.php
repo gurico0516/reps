@@ -38,14 +38,14 @@
     <div class="container">
 
       <div class="logo float-left">
-        <h1 class="text-light"><a href="{{ route('index') }}"><span>reps</span></a></h1>
+        <h1 class="text-light"><a href="{{ route('home') }}"><span>reps</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="nav-menu float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href="{{ route('index') }}">ホーム</a></li>
+          <li class="active"><a href="{{ route('home') }}">ホーム</a></li>
           <li><a href="#about">repsについて</a></li>
           <li><a href="#portfolio">魅力的な爬虫類</a></li>
           <li><a href="#">みんなの投稿</a></li>
