@@ -8,3 +8,5 @@ Auth::routes();
 Route::get('/', 'HomeController@home')->name('home');
 
 Route::get('index', 'PostsController@index')->name('index');
+
+Route::get('show', 'PostsController@show')->name('show');

@@ -8,6 +8,6 @@ class Post extends Model
 {
     public function comments()
     {
-        return $this->hasManu('App\Entities\Comment');
+        return $this->hasMany('App\Entities\Comment');
     }
 }

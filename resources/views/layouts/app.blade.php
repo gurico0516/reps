@@ -48,7 +48,7 @@
           <li class="active"><a href="{{ route('home') }}">ホーム</a></li>
           <li><a href="#about">repsについて</a></li>
           <li><a href="#portfolio">魅力的な爬虫類</a></li>
-          <li><a href="#">みんなの投稿</a></li>
+          <li><a href="{{ route('index') }}">みんなの投稿</a></li>
           @if (Auth::check())
             <li class="nav-item dropdown">
               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
