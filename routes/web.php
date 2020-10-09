@@ -1,12 +1,12 @@
 <?php
-// ログイン認証後アクセス可
-
 // 認証
 Auth::routes();
 
-// ホーム画面
+// ホーム
 Route::get('/', 'HomeController@home')->name('home');
 
+// 投稿一覧
 Route::get('index', 'PostsController@index')->name('index');
 
-Route::get('show', 'PostsController@show')->name('show');
+// 詳細
+Route::get('show/{id}', 'PostsController@show')->name('show');
