@@ -13,6 +13,12 @@ class Post extends Model
         'updated_at',
     ];
 
+    protected $fillable = [
+        'name',
+        'subject',
+        'message',
+    ];
+
     public function comments()
     {
         return $this->hasMany('App\Entities\Comment');

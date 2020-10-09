@@ -198,14 +198,7 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>reps</span></strong>. All Rights Reserved
-      </div>
-    </div>
-  </footer><!-- End #footer -->
+
 
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 

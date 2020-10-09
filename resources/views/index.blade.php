@@ -2,22 +2,33 @@
 
 @section('content')
 
-<h2>みんなの投稿</h2>
+ <h1 class="h4 mb-4 font-weight-bold">
+    みんなの投稿
+</h1>
+<div class="mt-3 mb-3">
+    <a href="{{ route('create') }}" class="btn btn-primary">
+        投稿してみる
+    </a>
+    <a href="{{ route('home') }}" class="btn btn-primary">
+        トップ
+    </a>
+</div>
+
 <div class="table-responsive">
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>作成日時</th>
-                <th>名前</th>
-                <th>件名</th>
-                <th>メッセージ</th>
-                <th>処理</th>
+                <th>日時</th>
+                <th>お名前</th>
+                <th>好きな爬虫類</th>
+                <th>魅力</th>
             </tr>
         </thead>
         <tbody id="tbl">
             @foreach ($posts as $post)
                 <tr>
                     <td>{{ $post->created_at->format('Y-m-d') }}</td>
+
                     <td>{{ $post->name }}</td>
                     <td>{{ $post->subject }}</td>
                     <td>{!! nl2br(e($post->message, 100)) !!}

@@ -26,7 +26,7 @@
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-      <!-- ======= Header ======= -->
+  !-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container">
 
@@ -73,4 +73,13 @@
         </main>
     </div>
 </body>
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>reps</span></strong>. All Rights Reserved
+      </div>
+    </div>
+  </footer><!-- End #footer -->
+
 </html>
