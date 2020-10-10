@@ -24,7 +24,6 @@ This application is intended to be used on Mac OS  or Linux (probably available 
 And following instructions are only for Mac OS , sorry.
 
 ## Live Demo
-See project running here:  
 Sorry, this application doesn't still deploy. It's coming soon. 
 
 ## Walkthrough
