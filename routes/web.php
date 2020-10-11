@@ -12,9 +12,19 @@ Route::get('index', 'PostController@index')->name('index');
 Route::get('show/{id}', 'PostController@show')->name('show');
 
 // コメント
-Route::post('comment', 'CommentController@postComment')->name('comment');
+Route::post('comment', 'CommentController@store')->name('comment');
 
 // 登録
 Route::get('create', 'PostController@create')->name('create');
 Route::get('create-complete', 'PostController@getCreateComplete')->name('get-create-complete');
 Route::post('create-complete', 'PostController@postCreateComplete')->name('create-complete');
+
+// 編集
+Route::get('edit', 'PostController@edit')->name('edit');
+Route::get('edit-complete', 'PostController@getEditComplete')->name('get-edit-complete');
+Route::post('edit-complete', 'PostController@postEditComplete')->name('edit-complete');
+
+// 削除
+Route::get('delete-confirm', 'PostController@getDeleteConfirm')->name('delete-confirm');
+Route::get('delete-complete', 'PostController@getDeleteComplete')->name('get-delete-complete');
+Route::post('delete-complete','PostController@postDeleteComplete')->name('delete-complete');

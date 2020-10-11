@@ -28,18 +28,17 @@
             @foreach ($posts as $post)
                 <tr>
                     <td>{{ $post->created_at->format('Y-m-d') }}</td>
-
                     <td>{{ $post->name }}</td>
                     <td>{{ $post->subject }}</td>
                     <td>{!! nl2br(e($post->message, 100)) !!}
-                    @if ($post->comments->count() >= 1)
-                        <p><span class="badge badge-primary">コメント：{{ $post->comments->count() }}件</span></p>
-                    @endif
+                        @if ($post->comments->count() >= 1)
+                            <p><span class="badge badge-primary">コメント：{{ $post->comments->count() }}件</span></p>
+                        @endif
                     </td>
                     <td class="text-nowrap">
                         <p><a href="{{ route('show', $post->id) }}" class="btn btn-primary btn-sm">詳細</a></p>
-                        <p><a href="" class="btn btn-info btn-sm">編集</a></p>
-                        <p><a href="" class="btn btn-danger btn-sm">削除</a></p>
+                        <p><a href="{{ route('edit', $post->id) }}" class="btn btn-info btn-sm">編集</a></p>
+                        <p><a href="{{ route('delete-confirm', $post->id) }}" class="btn btn-danger btn-sm">削除</a></p>
                     </td>
                 </tr>
             @endforeach

@@ -10,7 +10,7 @@ class PostService
      * 保存する
      *
      * @param array $inputs 入力値
-     * @param Post $post 投稿
+     * @param Post $post 投稿内容
      * @return void
      * @throws Exception | Throwable
      */
@@ -25,5 +25,17 @@ class PostService
         $entity->message = $inputs['message'];
 
         $entity->save();
+    }
+
+    /**
+     * 削除する
+     *
+     * @param Post $entity 投稿内容
+     * @return void
+     * @throws Exception | Throwable
+     */
+    public function delete(Post $entity)
+    {
+        $entity->delete();
     }
 }

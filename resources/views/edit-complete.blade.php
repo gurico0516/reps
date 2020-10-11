@@ -6,9 +6,9 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-body">
-                @if (session('poststatus'))
+                @if (session('editstatus'))
                     <div class="alert alert-success mt-4 mb-4">
-                        {{ session('poststatus') }}
+                        {{ session('editstatus') }}
                     </div>
                 @endif
                     <div class="form-group">

@@ -4,41 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Entities\Comment;
-use App\Services\CommentService;
 use App\Http\Requests\CommentRequest;
 use Illuminate\Support\Facades\Redirect;
 
 class CommentController extends Controller
 {
     /**
-     * @var CommentService $service
+     * バリデーション、登録データの整形など
      */
-    private $service;
-
-    /**
-     * constructor
-     *
-     * @param CommentService $service
-     */
-    public function __construct(CommentService $service)
+    public function store(CommentRequest $request)
     {
-        $this->service = $service;
-    }
+        $savedata = [
+            'post_id' => $request->post_id,
+            'name' => $request->name,
+            'comment' => $request->comment,
+        ];
 
-    /**
-     * コメントを投稿する
-     *
-     * @return RedirectResponse
-     * @throws Exception | Throwable
-     */
-    public function postComment(CommentRequest $request, Commment $entity)
-    {
-        $inputs = $request->all();
+        $comment = new Comment;
+        $comment->fill($savedata)->save();
 
-        $id = $entity->post_id;
-
-        $this->service->store($inputs);
-
-        return Redirect::route('show', ['id', $id])->with('commentstatus','コメントを投稿しました');;
+        return redirect()->route('show', [$savedata['post_id']])->with('commentstatus','コメントを投稿しました');
     }
 }
