@@ -1,16 +1,18 @@
-@extends('layouts.parent')
+@extends('layouts.auth')
 
 @section('content')
 
- <h1 class="h4 mb-4 font-weight-bold">
+<br>
+<br>
+<h1 class="h4 mb-4 font-weight-bold">
     みんなの投稿
 </h1>
 <div class="mt-3 mb-3">
-    <a href="{{ route('create') }}" class="btn btn-primary">
-        投稿してみる
-    </a>
     <a href="{{ route('home') }}" class="btn btn-primary">
         トップ
+    </a>
+    <a href="{{ route('create') }}" class="btn btn-primary">
+        投稿してみる
     </a>
 </div>
 

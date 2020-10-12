@@ -20,11 +20,11 @@ Route::get('create-complete', 'PostController@getCreateComplete')->name('get-cre
 Route::post('create-complete', 'PostController@postCreateComplete')->name('create-complete');
 
 // 編集
-Route::get('edit', 'PostController@edit')->name('edit');
+Route::get('edit/{post}', 'PostController@edit')->name('edit');
 Route::get('edit-complete', 'PostController@getEditComplete')->name('get-edit-complete');
-Route::post('edit-complete', 'PostController@postEditComplete')->name('edit-complete');
+Route::post('edit-complete/{post}', 'PostController@postEditComplete')->name('edit-complete');
 
 // 削除
-Route::get('delete-confirm', 'PostController@getDeleteConfirm')->name('delete-confirm');
+Route::get('delete-confirm/{post}', 'PostController@getDeleteConfirm')->name('delete-confirm');
 Route::get('delete-complete', 'PostController@getDeleteComplete')->name('get-delete-complete');
-Route::post('delete-complete','PostController@postDeleteComplete')->name('delete-complete');
+Route::post('delete-complete/{post}','PostController@postDeleteComplete')->name('delete-complete');
