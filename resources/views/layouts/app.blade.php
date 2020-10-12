@@ -26,7 +26,8 @@
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
-  !-- ======= Header ======= -->
+
+  <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container">
 
@@ -68,11 +69,11 @@
     </div>
   </header><!-- End #header -->
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+  <main class="py-4">
+      @yield('content')
+  </main>
 </body>
+
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <div class="container">

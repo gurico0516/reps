@@ -2,6 +2,9 @@
 
 @section('content')
 
+<br>
+<br>
+
 <div class="container mt-4">
     <div class="border p-4">
         {{-- 件名 --}}
@@ -11,7 +14,7 @@
 
         {{-- 投稿情報 --}}
         <div class="summary">
-            <p><span>{{ $post->name }}</span> / <time>{{ $post->updated_at->format('Y-m-d') }}</time> / {{ $post->id }}</p>
+            <p><span>{{ $post->name }}</span> / <time>{{ $post->updated_at->format('Y-m-d') }}</time></p>
         </div>
 
         {{-- 本文 --}}
@@ -28,8 +31,7 @@
                 <div class="border-top p-4">
                     <time class="text-secondary">
                         {{ $comment->name }} /
-                        {{ $comment->created_at->format('Y-m-d') }} /
-                        {{ $comment->id }}
+                        {{ $comment->created_at->format('Y-m-d') }}
                     </time>
                     <p class="mt-2">
                         {!! nl2br(e($comment->comment)) !!}
