@@ -14,17 +14,19 @@ Route::get('show/{id}', 'PostController@show')->name('show');
 // コメント
 Route::post('comment', 'CommentController@store')->name('comment');
 
-// 登録
-Route::get('create', 'PostController@create')->name('create');
-Route::get('create-complete', 'PostController@getCreateComplete')->name('get-create-complete');
-Route::post('create-complete', 'PostController@postCreateComplete')->name('create-complete');
+Route::group(['middleware' => 'auth'], function() {
+    // 登録
+    Route::get('create', 'PostController@create')->name('create');
+    Route::get('create-complete', 'PostController@getCreateComplete')->name('get-create-complete');
+    Route::post('create-complete', 'PostController@postCreateComplete')->name('create-complete');
 
-// 編集
-Route::get('edit/{post}', 'PostController@edit')->name('edit');
-Route::get('edit-complete', 'PostController@getEditComplete')->name('get-edit-complete');
-Route::post('edit-complete/{post}', 'PostController@postEditComplete')->name('edit-complete');
+    // 編集
+    Route::get('edit/{post}', 'PostController@edit')->name('edit');
+    Route::get('edit-complete', 'PostController@getEditComplete')->name('get-edit-complete');
+    Route::post('edit-complete/{post}', 'PostController@postEditComplete')->name('edit-complete');
 
-// 削除
-Route::get('delete-confirm/{post}', 'PostController@getDeleteConfirm')->name('delete-confirm');
-Route::get('delete-complete', 'PostController@getDeleteComplete')->name('get-delete-complete');
-Route::post('delete-complete/{post}','PostController@postDeleteComplete')->name('delete-complete');
+    // 削除
+    Route::get('delete-confirm/{post}', 'PostController@getDeleteConfirm')->name('delete-confirm');
+    Route::get('delete-complete', 'PostController@getDeleteComplete')->name('get-delete-complete');
+    Route::post('delete-complete/{post}','PostController@postDeleteComplete')->name('delete-complete');
+});

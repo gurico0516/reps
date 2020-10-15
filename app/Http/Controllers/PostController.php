@@ -26,6 +26,7 @@ class PostController extends Controller
      */
     public function __construct(PostService $service)
     {
+        $this->middleware('auth')->except('index');
         $this->service = $service;
     }
 
@@ -34,7 +35,7 @@ class PostController extends Controller
      *
      * @return View
      */
-    public function index(POST $post)
+    public function index(Post $post)
     {
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
 
