@@ -7,8 +7,7 @@
     <div class="hero-container">
       <h1>repsとは</h1>
       <h2>爬虫類の魅力をより多くの人に知ってもらえるサービスです！</h2>
-      <a href="#about" class="btn-get-started scrollto">さっそくrepsに参加する！
-      </a>
+      <a href="#about" class="btn-get-started scrollto">さっそくrepsに参加する！</a>
     </div>
   </section><!-- #hero -->
 

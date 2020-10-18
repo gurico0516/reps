@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Entities\Post;
+use App\User;
 use App\Services\PostService;
 use App\Http\Requests\PostRequest;
 use App\Http\Controllers\Controller;
@@ -35,11 +36,13 @@ class PostController extends Controller
      *
      * @return View
      */
-    public function index(Post $post)
+    public function index(Post $post, User $entity)
     {
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
+        $auths = Auth::user();
+        $users = User::all();
 
-        return view('index', ['posts' => $posts, 'postId' => $post->id]);
+        return view('index', ['posts' => $posts, 'postId' => $post->id, 'users' => $users, 'auths' => $auths]);
     }
 
     /**

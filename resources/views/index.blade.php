@@ -31,13 +31,15 @@
                             <p><span class="badge badge-primary">コメント：{{ $post->comments->count() }}件</span></p>
                         @endif
                     </td>
-                    @if (Auth::check())
-                        <td class="text-nowrap">
-                            <p><a href="{{ route('show', $post->id) }}" class="btn btn-primary btn-sm">詳細</a></p>
-                            <p><a href="{{ route('edit', $post->id) }}" class="btn btn-info btn-sm">編集</a></p>
-                            <p><a href="{{ route('delete-confirm', $post->id) }}" class="btn btn-danger btn-sm">削除</a></p>
-                        </td>
-                    @endif
+                    @foreach ($users as $user)
+                        @if ($user['id'] == Auth::id())
+                            <td class="text-nowrap">
+                                <p><a href="{{ route('show', $post->id) }}" class="btn btn-primary btn-sm">詳細</a></p>
+                                <p><a href="{{ route('edit', $post->id) }}" class="btn btn-info btn-sm">編集</a></p>
+                                <p><a href="{{ route('delete-confirm', $post->id) }}" class="btn btn-danger btn-sm">削除</a></p>
+                            </td>
+                        @endif
+                    @endforeach
                 </tr>
             @endforeach
         </tbody>
