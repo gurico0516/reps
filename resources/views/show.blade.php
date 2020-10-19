@@ -43,6 +43,10 @@
         </section>
     </div>
 </div>
+
+
+
+<!-- コメント入力欄 -->
 <form class="mb-4" method="POST" action="{{ route('comment') }}">
     @csrf
     <input type="hidden" name="post_id"  value="{{ $post->id }}">
@@ -85,5 +89,16 @@
     </a>
 </div>
 
+ <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
 @endsection
