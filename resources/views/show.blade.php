@@ -72,7 +72,7 @@
     </div>
 
     <div class="mt-4">
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-outline-info">
             コメントする
         </button>
     </div>
@@ -84,10 +84,14 @@
     </div>
 @endif
 <div class="mt-4 mb-4">
-    <a href="{{ route('index') }}" class="btn btn-info">
-        一覧に戻る
-    </a>
+    <p>
+        <a href="{{ route('index') }}" class="btn btn-info btn-sm">一覧に戻る</a>
+        <a href="{{ route('edit', $post->id) }}" class="btn btn-info btn-sm">編集</a>
+        <a href="{{ route('delete-confirm', $post->id) }}" class="btn btn-danger btn-sm">削除</a>
+    </p>
 </div>
+
+
 
  <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery/jquery.min.js"></script>

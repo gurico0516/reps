@@ -34,9 +34,7 @@
                     @foreach ($users as $user)
                         @if ($user['id'] == Auth::id())
                             <td class="text-nowrap">
-                                <p><a href="{{ route('show', $post->id) }}" class="btn btn-primary btn-sm">詳細</a></p>
-                                <p><a href="{{ route('edit', $post->id) }}" class="btn btn-info btn-sm">編集</a></p>
-                                <p><a href="{{ route('delete-confirm', $post->id) }}" class="btn btn-danger btn-sm">削除</a></p>
+                                <p><a href="{{ route('show', $post->id) }}" class="btn btn-info btn-sm">詳細</a></p>
                             </td>
                         @endif
                     @endforeach
