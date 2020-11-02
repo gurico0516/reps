@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Entities\Post;
+use Illuminate\Support\Facades\Auth;
 
 class PostService
 {
@@ -20,6 +21,7 @@ class PostService
             $entity = Post::make();
         }
 
+        $entity->user_id = Auth::id();
         $entity->name = $inputs['name'];
         $entity->subject = $inputs['subject'];
         $entity->message = $inputs['message'];

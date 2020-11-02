@@ -14,7 +14,6 @@
         <form method="POST" action="{{ route('create-complete') }}">
             @csrf
             <fieldset class="mb-4">
-
                 <div class="form-group">
                     <label for="subject">お名前</label>
                     <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}">
@@ -50,7 +49,7 @@
                         キャンセル
                     </a>
 
-                    <input type="submit" class="btn btn-primary" value="確認する">
+                    <input type="submit" class="btn btn-info" value="確認する">
                 </div>
             </fieldset>
         </form>

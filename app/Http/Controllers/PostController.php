@@ -36,13 +36,11 @@ class PostController extends Controller
      *
      * @return View
      */
-    public function index(Post $post, User $entity)
+    public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->paginate(10);
-        $auths = Auth::user();
-        $users = User::all();
 
-        return view('index', ['posts' => $posts, 'postId' => $post->id, 'users' => $users, 'auths' => $auths]);
+        return view('index', ['posts' => $posts]);
     }
 
     /**
@@ -50,9 +48,8 @@ class PostController extends Controller
      *
      * @return View
      */
-    public function show($id)
+    public function show(Post $post)
     {
-        $post = Post::findOrFail($id);
         return view('show', ['post' => $post]);
     }
 

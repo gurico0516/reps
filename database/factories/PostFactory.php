@@ -10,5 +10,6 @@ $factory->define(Post::class, function (Faker $faker) {
         'subject' => $faker->realText(16),    // 16文字のテキスト
         'message' => $faker->realText(200),    // 200文字のテキスト
         'name' => $faker->name,    // 名前
+        'user_id' => $faker->user_id,
     ];
 });

@@ -49,8 +49,6 @@
 <!-- コメント入力欄 -->
 <form class="mb-4" method="POST" action="{{ route('comment') }}">
     @csrf
-    <input type="hidden" name="post_id"  value="{{ $post->id }}">
-
     <div class="form-group">
         <label for="subject">名前</label>
         <input type="text" name="name" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}">
@@ -86,8 +84,12 @@
 <div class="mt-4 mb-4">
     <p>
         <a href="{{ route('index') }}" class="btn btn-info btn-sm">一覧に戻る</a>
-        <a href="{{ route('edit', $post->id) }}" class="btn btn-info btn-sm">編集</a>
-        <a href="{{ route('delete-confirm', $post->id) }}" class="btn btn-danger btn-sm">削除</a>
+        @auth
+            @if ($post->user_id == Auth::user()->id)
+                <a href="{{ route('edit', $post->id) }}" class="btn btn-info btn-sm">編集</a>
+                <a href="{{ route('delete-confirm', $post->id) }}" class="btn btn-danger btn-sm">削除</a>
+            @endif
+        @endauth
     </p>
 </div>
 

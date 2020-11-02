@@ -31,13 +31,9 @@
                             <p><span class="badge badge-primary">コメント：{{ $post->comments->count() }}件</span></p>
                         @endif
                     </td>
-                    @foreach ($users as $user)
-                        @if ($user['id'] == Auth::id())
-                            <td class="text-nowrap">
-                                <p><a href="{{ route('show', $post->id) }}" class="btn btn-info btn-sm">詳細</a></p>
-                            </td>
-                        @endif
-                    @endforeach
+                    <td class="text-nowrap">
+                        <p><a href="{{ route('show', $post->id) }}" class="btn btn-info btn-sm">詳細</a></p>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

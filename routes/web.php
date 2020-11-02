@@ -9,7 +9,7 @@ Route::get('/', 'HomeController@home')->name('home');
 Route::get('index', 'PostController@index')->name('index');
 
 // 詳細
-Route::get('show/{id}', 'PostController@show')->name('show');
+Route::get('show/{post}', 'PostController@show')->name('show');
 
 // コメント
 Route::post('comment', 'CommentController@store')->name('comment');

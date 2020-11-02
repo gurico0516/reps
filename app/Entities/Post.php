@@ -20,10 +20,16 @@ class Post extends Model
         'name',
         'subject',
         'message',
+        'user_id',
     ];
 
     public function comments()
     {
         return $this->hasMany('App\Entities\Comment');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }
