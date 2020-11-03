@@ -27,9 +27,6 @@
                     <td>{{ $post->name }}</td>
                     <td>{{ $post->subject }}</td>
                     <td>{!! nl2br(e($post->message, 100)) !!}
-                        @if ($post->comments->count() >= 1)
-                            <p><span class="badge badge-primary">コメント：{{ $post->comments->count() }}件</span></p>
-                        @endif
                     </td>
                     <td class="text-nowrap">
                         <p><a href="{{ route('show', $post->id) }}" class="btn btn-info btn-sm">詳細</a></p>

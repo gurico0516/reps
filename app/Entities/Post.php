@@ -23,11 +23,6 @@ class Post extends Model
         'user_id',
     ];
 
-    public function comments()
-    {
-        return $this->hasMany('App\Entities\Comment');
-    }
-
     public function user()
     {
         return $this->belongsTo('App\User');
