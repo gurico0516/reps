@@ -15,7 +15,7 @@
                         {{ session('poststatus') }}
                     </div>
                 @endif
-                    <div class="form-group">
+                    <div class="form-group row">
                         <div class="col-md-6 col-md-offset-4">
                             <a class="btn btn-secondary" href="{{ route('index') }}">
                                 投稿一覧に戻る

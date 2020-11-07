@@ -25,8 +25,8 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 </head>
-<body>
 
+<body>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container">
@@ -76,6 +76,8 @@
 
   <!-- ======= Footer ======= -->
   <footer id="footer">
+    <!-- Vendor JS Files -->
+    <script src="{{ asset('js/app.js') }}"></script>
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>reps</span></strong>. All Rights Reserved

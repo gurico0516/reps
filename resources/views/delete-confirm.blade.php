@@ -47,7 +47,7 @@
                         キャンセル
                     </a>
 
-                    <input type="submit" class="btn btn-primary" value="削除する">
+                    <input type="submit" class="btn btn-info" value="削除する">
                 </div>
             </fieldset>
         </form>

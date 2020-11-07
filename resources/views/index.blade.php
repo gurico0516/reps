@@ -26,8 +26,7 @@
                     <td>{{ $post->created_at->format('Y-m-d') }}</td>
                     <td>{{ $post->name }}</td>
                     <td>{{ $post->subject }}</td>
-                    <td>{!! nl2br(e($post->message, 100)) !!}
-                    </td>
+                    <td>{!! nl2br(e($post->message, 100)) !!}</td>
                     <td class="text-nowrap">
                         <p><a href="{{ route('show', $post->id) }}" class="btn btn-info btn-sm">詳細</a></p>
                     </td>
@@ -39,7 +38,5 @@
         {{ $posts->links() }}
     </div>
 </div>
-
-
 
 @endsection

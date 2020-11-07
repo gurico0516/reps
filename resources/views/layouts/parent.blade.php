@@ -25,70 +25,63 @@
   <!-- Template Main CSS File -->
   <link href="/assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top">
+      <div class="container">
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container">
+        <div class="logo float-left">
+          <h1 class="text-light"><a href="{{ route('home') }}"><span>reps</span></a></h1>
+        </div>
 
-      <div class="logo float-left">
-        <h1 class="text-light"><a href="{{ route('home') }}"><span>reps</span></a></h1>
-      </div>
-
-      <nav class="nav-menu float-right d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="{{ route('home') }}">ホーム</a></li>
-          <li><a href="{{ route('index') }}">みんなの投稿</a></li>
-          <li><a href="{{ route('create') }}">投稿してみる</a></li>
-          @if (Auth::check())
-            <li class="nav-item dropdown">
-              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                  {{ Auth::user()->name }} <span class="caret"></span>
-              </a>
-
-              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                                  document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+        <nav class="nav-menu float-right d-none d-lg-block">
+          <ul>
+            <li class="active"><a href="{{ route('home') }}">ホーム</a></li>
+            <li><a href="{{ route('index') }}">みんなの投稿</a></li>
+            <li><a href="{{ route('create') }}">投稿してみる</a></li>
+            @if (Auth::check())
+              <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }} <span span class="caret"></span>
                 </a>
 
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                  @csrf
-                </form>
-              </div>
-            </li>
-          @else
-            <li><a href="{{ route('login') }}">ログイン</a></li>
-            <li><a href="{{ route('register') }}">会員登録</a></li>
-          @endif
-        </ul>
-      </nav><!-- .nav-menu -->
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ route('logout') }}"
+                      onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                  </a>
 
-    </div>
-  </header><!-- End #header -->
-  <main class="py-4">
-      @yield('content')
-       <!-- Vendor JS Files -->
-      <script src="assets/vendor/jquery/jquery.min.js"></script>
-      <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-      <script src="assets/vendor/php-email-form/validate.js"></script>
-      <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-      <script src="assets/vendor/venobox/venobox.min.js"></script>
-      <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                  </form>
+                </div>
+              </li>
+            @else
+              <li><a href="{{ route('login') }}">ログイン</a></li>
+              <li><a href="{{ route('register') }}">会員登録</a></li>
+            @endif
+          </ul>
+        </nav><!-- .nav-menu -->
 
-      <!-- Template Main JS File -->
-      <script src="assets/js/main.js"></script>
-  </main>
+      </div>
+    </header><!-- End #header -->
+
+    <main class="py-4">
+        @yield('content')
+    </main>
 </body>
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
+<!-- ======= Footer ======= -->
+<footer id="footer">
+  <!-- Vendor JS Files -->
+  <script src="{{ asset('js/app.js') }}"></script>
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>reps</span></strong>. All Rights Reserved
       </div>
     </div>
-  </footer><!-- End #footer -->
+</footer><!-- End #footer -->
+
 </html>

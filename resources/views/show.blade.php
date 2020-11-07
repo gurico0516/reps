@@ -24,30 +24,18 @@
     </div>
 </div>
 
-<div class="mt-5">
-    <p>
-        <a href="{{ route('index') }}" class="btn btn-info btn-sm">一覧に戻る</a>
-        @auth
-            @if ($post->user_id == Auth::user()->id)
-                <a href="{{ route('edit', $post->id) }}" class="btn btn-info btn-sm">編集</a>
-                <a href="{{ route('delete-confirm', $post->id) }}" class="btn btn-danger btn-sm">削除</a>
-            @endif
-        @endauth
-    </p>
+<div class="form-group row">
+    <div class="offset-9 mt-4">
+        <p>
+            <a href="{{ route('index') }}" class="btn btn-info btn-sm">一覧に戻る</a>
+            @auth
+                @if ($post->user_id == Auth::user()->id)
+                    <a href="{{ route('edit', $post->id) }}" class="btn btn-info btn-sm">編集</a>
+                    <a href="{{ route('delete-confirm', $post->id) }}" class="btn btn-danger btn-sm">削除</a>
+                @endif
+            @endauth
+        </p>
+    </div>
 </div>
-
-
-
- <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
 
 @endsection
