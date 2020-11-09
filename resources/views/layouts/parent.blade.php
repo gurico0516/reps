@@ -27,61 +27,59 @@
 </head>
 
 <body>
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-      <div class="container">
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container">
 
-        <div class="logo float-left">
-          <h1 class="text-light"><a href="{{ route('home') }}"><span>reps</span></a></h1>
-        </div>
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="{{ route('home') }}"><span>reps</span></a></h1>
+      </div>
 
-        <nav class="nav-menu float-right d-none d-lg-block">
-          <ul>
-            <li class="active"><a href="{{ route('home') }}">ホーム</a></li>
-            <li><a href="{{ route('index') }}">みんなの投稿</a></li>
-            <li><a href="{{ route('create') }}">投稿してみる</a></li>
-            @if (Auth::check())
-              <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }} <span span class="caret"></span>
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="nav-item active"><a href="{{ route('home') }}">ホーム</a></li>
+          <li class="nav-item"><a href="{{ route('index') }}">みんなの投稿</a></li>
+          <li class="nav-item"><a href="{{ route('create') }}">投稿してみる</a></li>
+          @if (Auth::check())
+            <li class="nav-item dropdown">
+              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+              {{ Auth::user()->name }} <span class="caret"></span>
+              </a>
+
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
                 </a>
 
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{{ route('logout') }}"
-                      onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
-                      {{ __('Logout') }}
-                  </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+              </div>
+            </li>
+          @else
+            <li class="nav-item"><a href="{{ route('login') }}">ログイン</a></li>
+            <li class="nav-item"><a href="{{ route('register') }}">会員登録</a></li>
+          @endif
+        </ul>
+      </nav><!-- .nav-menu -->
 
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                  </form>
-                </div>
-              </li>
-            @else
-              <li><a href="{{ route('login') }}">ログイン</a></li>
-              <li><a href="{{ route('register') }}">会員登録</a></li>
-            @endif
-          </ul>
-        </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End #header -->
 
-      </div>
-    </header><!-- End #header -->
-
-    <main class="py-4">
-        @yield('content')
-    </main>
+  <main class="py-4">
+      @yield('content')
+  </main>
 </body>
 
 <!-- ======= Footer ======= -->
 <footer id="footer">
-  <!-- Vendor JS Files -->
-  <script src="{{ asset('js/app.js') }}"></script>
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>reps</span></strong>. All Rights Reserved
-      </div>
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong><span>reps</span></strong>. All Rights Reserved
     </div>
+  </div>
 </footer><!-- End #footer -->
 
 </html>

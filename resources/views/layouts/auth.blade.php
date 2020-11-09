@@ -72,13 +72,13 @@
   </main>
 </body>
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>reps</span></strong>. All Rights Reserved
-      </div>
+<!-- ======= Footer ======= -->
+<footer id="footer">
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong><span>reps</span></strong>. All Rights Reserved
     </div>
-  </footer><!-- End #footer -->
+  </div>
+</footer><!-- End #footer -->
 
 </html>

@@ -77,7 +77,6 @@
   <!-- ======= Footer ======= -->
   <footer id="footer">
     <!-- Vendor JS Files -->
-    <script src="{{ asset('js/app.js') }}"></script>
     <div class="container">
       <div class="copyright">
         &copy; Copyright <strong><span>reps</span></strong>. All Rights Reserved
