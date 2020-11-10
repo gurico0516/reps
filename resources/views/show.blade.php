@@ -26,8 +26,7 @@
         </div>
     </div>
 
-    <div class="form-group row">
-        <div class="offset-9 mt-3">
+        <div class="mt-5">
             <p>
                 <a href="{{ route('index') }}" class="btn btn-outline-dark btn-sm">一覧に戻る</a>
                 @auth
@@ -38,10 +37,7 @@
                 @endauth
             </p>
         </div>
-    </div>
 </main><!-- End #main -->
-
-<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 <!-- Vendor JS Files -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
