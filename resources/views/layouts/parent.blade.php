@@ -35,7 +35,7 @@
         <h1 class="text-light"><a href="{{ route('home') }}"><span>reps</span></a></h1>
       </div>
 
-      <nav class="nav-menu float-right d-none d-lg-block">
+      <nav class="navbar-expand-sm nav-menu float-right d-none d-lg-block">
         <ul>
           <li class="nav-item active"><a href="{{ route('home') }}">ホーム</a></li>
           <li class="nav-item"><a href="{{ route('index') }}">みんなの投稿</a></li>
