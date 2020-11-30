@@ -2,17 +2,13 @@
 
 This is a web application for people interested in reptiles.
 
-example accounts:
-
-Mail address: tomato@tomato.jp | Password: tomato
-
 This web application is featuring basic like below:
 
 * login authentication function
 * user registration function
 * post list display
-* post list display 
-* post deletion function
+* post editing function
+* post delete function
 * post function
 * pagenation
 * one to many relationship
@@ -29,13 +25,13 @@ Sorry, this application doesn't still deploy. It's coming soon.
 ## Walkthrough
 Register an account through "Sign Up"
 
-1.Sign In and click your name on the top-right corner  
+1.Sign in and click your name on the top-right corner  
 
-2.Update with your name  
+2.Look over post list display  
 
-3.Post your oppinion  
+3.Post your love reptiles if you have those   
 
-4.look other comments and posts
+4.communicate with reptile lovers
 
 ## Built Using
 * PHP 7
@@ -49,5 +45,3 @@ Register an account through "Sign Up"
 * Homestead
 
 * Visual Studio Code
-
-* Heroku

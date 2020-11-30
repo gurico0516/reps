@@ -43,16 +43,18 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="mt-5">
-                        <a class="btn btn-secondary" href="{{ route('index') }}">
-                            キャンセル
-                        </a>
-
-                        <input type="submit" class="btn btn-info" value="削除する">
-                    </div>
                 </fieldset>
             </form>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <a class="btn btn-secondary" href="{{ route('index') }}">
+                    キャンセル
+                </a>
+
+                <input type="submit" class="btn btn-info" value="削除する">
+            </div>
         </div>
     </div>
 </main>

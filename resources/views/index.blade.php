@@ -29,6 +29,13 @@
                         <td>{{ $post->name }}</td>
                         <td>{{ $post->subject }}</td>
                         <td>{!! nl2br(e($post->message, 100)) !!}</td>
+                        @if (isset($post->image_file))
+                        <div class="card-body">
+                            <blockquote class="blockquote mb-0">
+                            <p><img src="{{ asset('/storage/'.$post->image_file)}}"></p>
+                            </blockquote>
+                        </div>
+                        @endif
                         <td class="text-nowrap">
                             <p><a href="{{ route('show', $post->id) }}" class="btn btn-info btn-sm">詳細</a></p>
                         </td>

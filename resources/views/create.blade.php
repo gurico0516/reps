@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="message">魅力</label>
+                        <label for="message">理由</label>
                         <textarea name="message" class="form-control {{ $errors->has('message') ? 'is-invalid' : '' }}" rows="4" ></textarea>
                         @if ($errors->has('message'))
                             <div class="invalid-feedback">
@@ -45,6 +45,8 @@
                             </div>
                         @endif
                     </div>
+
+                    <input type="file" name="image_file" class="" value="{{ old('image_file') }}">
 
                     <div class="mt-5">
                         <a class="btn btn-secondary" href="{{ route('index') }}">

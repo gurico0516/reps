@@ -23,18 +23,22 @@
                 {!! nl2br(e($post->message)) !!}
             </p>
         </div>
-    </div>
 
-    <div class="mt-5">
-        <p>
-            <a href="{{ route('index') }}" class="btn btn-outline-dark btn-sm">一覧に戻る</a>
-            @auth
-                @if ($post->user_id == Auth::user()->id)
-                    <a href="{{ route('edit', $post->id) }}" class="btn btn-info btn-sm">編集</a>
-                    <a href="{{ route('delete-confirm', $post->id) }}" class="btn btn-danger btn-sm">削除</a>
-                @endif
-            @endauth
-        </p>
+        <br>
+
+        <div class="row">
+            <div class="col-12">
+                <p>
+                    <a href="{{ route('index') }}" class="btn btn-outline-dark btn-sm">一覧に戻る</a>
+                    @auth
+                        @if ($post->user_id == Auth::user()->id)
+                            <a href="{{ route('edit', $post->id) }}" class="btn btn-info btn-sm">編集</a>
+                            <a href="{{ route('delete-confirm', $post->id) }}" class="btn btn-danger btn-sm">削除</a>
+                        @endif
+                    @endauth
+                </p>
+            </div>
+        </div>
     </div>
 </main><!-- End #main -->
 

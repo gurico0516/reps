@@ -25,6 +25,8 @@ class PostService
         $entity->name = $inputs['name'];
         $entity->subject = $inputs['subject'];
         $entity->message = $inputs['message'];
+        $filename = file('image_file')->store('public');
+        $entity->image_file = str_replace('public/', '', $filename);
 
         $entity->save();
     }

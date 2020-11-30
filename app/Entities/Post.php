@@ -21,6 +21,7 @@ class Post extends Model
         'subject',
         'message',
         'user_id',
+        'image_file',
     ];
 
     public function user()
