@@ -10,6 +10,7 @@ This web application is featuring basic like below:
 * post editing function
 * post delete function
 * post function
+* upload file
 * pagenation
 * one to many relationship
 
