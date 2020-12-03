@@ -7,7 +7,7 @@ This web application is featuring basic like below:
 * login authentication function
 * user registration function
 * post list display
-* post editing function
+* post edite function
 * post delete function
 * post function
 * upload file
