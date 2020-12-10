@@ -11,7 +11,6 @@ This web application is featuring basic like below:
 * post delete function
 * post function
 * pagenation
-* one to many relationship
 
 ## Prefece
 
