@@ -12,6 +12,13 @@
 
 <main id="main">
 
+    <div class="col-md-8 col-md-offset-2">
+        {{-- BEGIN 検索条件 --}}
+        <div class="panel panel-default">
+            <div class="panel-heading">検索条件</div>
+        </div>
+    </div>
+
     <div class="table-responsive">
         <table class="table table-hover">
                 <thead>
@@ -22,26 +29,26 @@
                         <th>魅力</th>
                     </tr>
                 </thead>
-            <tbody id="tbl">
-                @foreach ($posts as $post)
-                    <tr>
-                        <td>{{ $post->created_at->format('Y-m-d') }}</td>
-                        <td>{{ $post->name }}</td>
-                        <td>{{ $post->subject }}</td>
-                        <td>{!! nl2br(e($post->message, 100)) !!}</td>
-                        @if (isset($post->image_file))
-                        <div class="card-body">
-                            <blockquote class="blockquote mb-0">
-                            <p><img src="{{ asset('/storage/'.$post->image_file)}}"></p>
-                            </blockquote>
-                        </div>
-                        @endif
-                        <td class="text-nowrap">
-                            <p><a href="{{ route('show', $post->id) }}" class="btn btn-info btn-sm">詳細</a></p>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
+                <tbody id="tbl">
+                    @foreach ($posts as $post)
+                        <tr>
+                            <td>{{ $post->created_at->format('Y-m-d') }}</td>
+                            <td>{{ $post->name }}</td>
+                            <td>{{ $post->subject }}</td>
+                            <td>{!! nl2br(e($post->message, 100)) !!}</td>
+                            @if (isset($post->image_file))
+                            <div class="card-body">
+                                <blockquote class="blockquote mb-0">
+                                <p><img src="{{ asset('/storage/'.$post->image_file)}}"></p>
+                                </blockquote>
+                            </div>
+                            @endif
+                            <td class="text-nowrap">
+                                <p><a href="{{ route('show', $post->id) }}" class="btn btn-info btn-sm">詳細</a></p>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
         </table>
         <div class="d-flex justify-content-center mb-5">
             {{ $posts->links() }}
