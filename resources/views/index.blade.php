@@ -16,6 +16,18 @@
         {{-- BEGIN 検索条件 --}}
         <div class="panel panel-default">
             <div class="panel-heading">検索条件</div>
+            <div class="panel-body">
+                <form method="POST" action="{{ route('index') }}">
+                    @csrf
+                    {{-- 爬虫類 --}}
+                    <div class="form-group">
+                        <lavel for="subject">爬虫類</lavel>
+                        <div class="col-md-6">
+                            <input type="text" name="subject" class="form-control">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 
