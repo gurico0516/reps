@@ -52,7 +52,6 @@
                         <a class="btn btn-secondary" href="{{ route('index') }}">
                             キャンセル
                         </a>
-
                         <input type="submit" class="btn btn-info" value="確認する">
                     </div>
                 </fieldset>

@@ -26,6 +26,11 @@
                             <input type="text" name="subject" class="form-control">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-4">
+                            <input type="submit" class="btn btn-info" value="検索する">
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
