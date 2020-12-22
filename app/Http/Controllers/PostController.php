@@ -16,6 +16,13 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     /**
+     * メニューからの遷移判別
+     *
+     * @var string
+     */
+    const FROM_MENU_KEY = self::class . '-FromMenuKey';
+
+    /**
      * @var PostService $service
      */
     private $service;
@@ -29,6 +36,11 @@ class PostController extends Controller
     {
         $this->middleware('auth')->except('index');
         $this->service = $service;
+    }
+
+    public function getIndex()
+    {
+
     }
 
     /**
