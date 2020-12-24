@@ -6,6 +6,7 @@ use App\Entities\Post;
 use App\User;
 use App\Services\PostService;
 use App\Http\Requests\PostRequest;
+use App\Http\Requests\PostSearchRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -40,7 +41,22 @@ class PostController extends Controller
 
     public function getIndex()
     {
+        if ($this->TransitionFromMenu(self::FROM_MENU_KEY)) {
+            Session::forget(PostSearchRequest::class);
+        }
+        $inputs = Session::get(PostSearchRequest::class);
 
+        // 検索条件が無いのは初期表示、あるのは詳細画面や完了画面から戻ってきた場合
+        if (empty($inputs)) {
+            $inputs = [];
+            Session::put(PostSearchRequest::class, $requst->all());
+        } else {
+            unset($inputs['_token']);
+        }
+
+        $this->flashInputToSessionForForward($inputs);
+
+        return view('index');
     }
 
     /**
