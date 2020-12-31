@@ -8,7 +8,7 @@ This web application is featuring basic like below:
 * user registration function
 * post list display
 * post edit function
-* post delete function
+* post deletion function
 * post function
 * pagenation
 
