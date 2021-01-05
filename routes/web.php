@@ -15,6 +15,9 @@ Route::get('show/{post}', 'PostController@show')->name('show');
 Route::post('comment', 'CommentController@store')->name('comment');
 
 Route::group(['middleware' => 'auth'], function() {
+    // 検索
+    Route::get('index', ['getIndex' => 'PostController@getIndex'])->name('index');
+    Route::post('index', ['postIndex' => 'PostController@postIndex']);
     // 登録
     Route::get('create', 'PostController@create')->name('create');
     Route::get('create-complete', 'PostController@getCreateComplete')->name('get-create-complete');

@@ -39,6 +39,11 @@ class PostController extends Controller
         $this->service = $service;
     }
 
+    /**
+     * 検索画面を表示する
+     *
+     * @return View
+     */
     public function getIndex()
     {
         if ($this->TransitionFromMenu(self::FROM_MENU_KEY)) {
@@ -57,6 +62,20 @@ class PostController extends Controller
         $this->flashInputToSessionForForward($inputs);
 
         return view('index');
+    }
+
+    /**
+     * 検索ボタンを押下する
+     *
+     * @param PostSearchRequest $request 検索リクエスト
+     * @return RedirectResponse
+     */
+    public function postIndex(PostSearchRequest $request)
+    {
+        Session::forget(self::FROM_MENU_KEY);
+
+        Session::put(PostSearchRequest::class, $request->all());
+        return Redirect::route('index');
     }
 
     /**
