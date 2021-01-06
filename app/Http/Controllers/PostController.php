@@ -61,7 +61,9 @@ class PostController extends Controller
 
         $this->flashInputToSessionForForward($inputs);
 
-        return view('index');
+        $entities = $this->service->createBuilderForSearch($inputs);
+
+        return view('index')->with('entities', $entities);
     }
 
     /**

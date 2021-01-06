@@ -8,6 +8,30 @@ use Illuminate\Support\Facades\Auth;
 class PostService
 {
     /**
+     * 検索画面用の絞り込み条件を生成する
+     *
+     * @param array $inputs フォーム入力値
+     * @return Builder クエリ　
+     */
+    public function createBuiiderForSearch(array $inputs)
+    {
+        /**
+         * @var Builder $query
+         */
+        $query = Post::query();
+
+        // 爬虫類の検索
+        if (isset($inputs['subject'])) {
+            $query->where('subject', '=', $inputs['subject']);
+        }
+
+        // 並び順
+        $query->orderby('id', 'asc');
+
+        return $query;
+    }
+
+    /**
      * 保存する
      *
      * @param array $inputs 入力値
